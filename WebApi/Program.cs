@@ -26,15 +26,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
         b => b.MigrationsAssembly("Infrastructure")));
 
-// AutoMapper
+
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
-// Repositories
+
 builder.Services.AddScoped<IUsuario, UsuarioRepositorio>();
 builder.Services.AddScoped<IAgua, AguaRepositorio>();
 builder.Services.AddScoped<IReporte, ReporteRepositorio>();
 
-// Casos de Uso
+
 builder.Services.AddScoped<CrearUsuario>();
 builder.Services.AddScoped<CrearAgua>();
 
